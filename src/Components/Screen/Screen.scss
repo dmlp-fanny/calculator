@@ -1,0 +1,13 @@
+@import '../../Variables.scss';
+
+.screen {
+    width: 90%;
+    height: 40%;
+    padding: 5%;
+    background-color: $color_screen;
+    color: $color_background;
+    font-size: 3rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}

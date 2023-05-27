@@ -1,0 +1,14 @@
+@import '../../Variables.scss';
+
+
+.container {
+    width: 16rem;
+    height: 25rem;
+    background-color: $color_container;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 32px gray;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
