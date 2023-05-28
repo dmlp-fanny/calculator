@@ -12,7 +12,7 @@ function App() {
   const [firstNum, setFirstNum] = useState(0);
   const [secondNum, setSecondNum] = useState(0);
   const [operator, setOperator] = useState(null);
-  
+  const [pastScreen, setPastScreen] = useState('')
 
   const buttonsArray = ['AC', '/', 'x', 'C', '7', '8', '9', '-', '4', '5', '6', '+', '1', '2', '3', '0', '.', '=']
 
@@ -22,17 +22,24 @@ function App() {
     } else {
       secondNum == 0 ? setSecondNum(value) : setSecondNum(secondNum + value)
     }
+    console.log(firstNum);
   }
 
   const handleOperator = (value) => {
-    setOperator(value)
-
+    
     if (operator == 'C') {
       setFirstNum(0)
       setSecondNum(0)
       setOperator(null)
-
+    } else {
+      setOperator(value)
     }
+
+    // if (operator == 'AC') {
+    //   let str = (firstNum + operator + secondNum)
+    //   let cutStr = str.substring(0, str.length -1)
+    //   console.log(cutStr);
+    // }
   }
 
   const handleEqual = () => {
@@ -53,9 +60,11 @@ function App() {
           console.log(result);
           break;
         case '/':
-          result = Number(firstNum) / Number(secondNum)
-          console.log(result);
-          break;
+          if (secondNum !== 0) {
+            result = Number(firstNum) / Number(secondNum);
+            console.log(result);
+            break;
+          }
       }
     }
     setFirstNum(result)
@@ -63,13 +72,16 @@ function App() {
     setOperator(null)
   }
 
+  // setPastScreen(
+
+  // )
   const displayPastValues = () => {
     return (
       firstNum == 0 ? '' : firstNum
       &&
       operator == null ? firstNum : `${firstNum} ${operator}`
       &&
-      secondNum == 0 ? `${firstNum} ${operator}` : `${firstNum} ${operator} ${secondNum}`
+      secondNum == 0 && operator !== 'C' ? `${firstNum} ${operator}` : `${firstNum} ${operator} ${secondNum}`
     )
   }
   

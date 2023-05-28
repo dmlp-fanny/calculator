@@ -2,10 +2,10 @@
 
 .screen {
     width: 90%;
-    height: 40%;
+    height: 50%;
     padding: 5%;
-    background-color: $color_screen;
-    color: $color_background;
+    // background-color: $color_screen;
+    color: $color_screen;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

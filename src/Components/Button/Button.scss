@@ -1,9 +1,10 @@
 @import '../../Variables.scss';
 
 .button_digit {
-    border: none; 
-    background-color: $color_buttons;
-    font-size: 1.5rem;
+    // border: 0.5px solid #185a9d; 
+    border: none;
+    background-color: rgba(255,255,255, 0.4);
+    font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
 
@@ -13,18 +14,19 @@
 }
 
 .top {
-    color: $color_buttons-important;
+    color: #185a9d;
 }
 
 .side {
-    background-color: $color_buttons-important;
+    background-color: #185a9d;
+    border-bottom: 0.5px solid #43cea2; 
     &:hover {
         background-color: $color_buttons-important-hover;
     }
 }
 
 .equal {
-    background-color: $color_buttons-important;
+    background-color: #185a9d;
     grid-column: 4 / 5;
     grid-row: 4 / 6;
     &:hover {
